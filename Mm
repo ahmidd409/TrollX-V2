@@ -52,7 +52,7 @@ MakeWindow({
 })
 
 MinimizeButton({
-  Image = "rbxassetid://128177169754907",
+  Image = "rbxassetid://84938810858565",
   Size = {40, 40},
   Color = Color3.fromRGB(10, 10, 10),
   Corner = true,
@@ -63,7 +63,7 @@ MinimizeButton({
 local Main = MakeTab({Name = "المعلومات"})
 local Image = AddImageLabel(Main, {
   Name = "BROOKHAVEN_Script",
-  Image = "rbxassetid://128177169754907"
+  Image = "rbxassetid://84938810858565"
 })
 local Paragraph = AddParagraph(Main, {"سكربت عبارة عن مجموعة كبيرة فيها مميزات كثيرة", "bom dia meus manos"})
 AddButton(Main, {
