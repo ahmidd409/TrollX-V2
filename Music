@@ -1,0 +1,81 @@
+local Sound = Instance.new("Sound", game:GetService("SoundService"));
+Sound.SoundId = "rbxassetid://15689443663";
+Sound:Play();
+wait(0.1)
+game.StarterGui:SetCore("SendNotification", {
+    Title = "ممكن تنتظر شويه";
+    Text = "سكربت اغاني"; -- ARAB TEAM
+    Duration = 5;
+})
+
+wait(0.3)
+game.StarterGui:SetCore("SendNotification", {
+    Title = "بعد شويه عزيزي";
+    Text = "سكربت اغاني"; -- ARAB TEAM
+    Duration = 5;
+})
+
+wait(0.5)
+game.StarterGui:SetCore("SendNotification", {
+    Title = "هسه رح يفتح يمك";
+    Text = "☑️⚜️سكربت المطور TrollX⚜️☑️"; -- ARAB TEAM
+    Duration = 5;
+})
+local args = {
+    [1] = "RolePlayBio",
+    [2] = "🎶TrollX-music🎶"
+}
+
+game:GetService("ReplicatedStorage").RE:FindFirstChild("1RPNam1eTex1t"):FireServer(unpack(args))
+wait(0.9)
+
+
+loadstring(game:HttpGet(("https://qu.ax/knQhJ")))()
+MakeWindow({
+  Hub = {
+    Title = "المطور TrollX",
+    Animation = "لحظه حب"
+  },
+  Key = {
+    KeySystem = false,
+    Title = "Key System",
+    Description = "",
+    KeyLink = "",
+    Keys = {"1234"},
+    Notifi = {
+      Notifications = true,
+      CorrectKey = "Running the Script...",
+      Incorrectkey = "The key is incorrect",
+      CopyKeyLink = "Copied to Clipboard"
+    }
+  }
+})
+
+MinimizeButton({
+  Image = "rbxassetid://84938810858565",
+  Size = {40, 40},
+  Color = Color3.fromRGB(10, 10, 10),
+  Corner = true,
+  Stroke = true,
+  StrokeColor = Color3.fromRGB(10, 10, 10)
+})
+
+local Main = MakeTab({Name = "المعلومات"})
+local Image = AddImageLabel(Main, {
+  Name = "BROOKHAVEN_Script",
+  Image = "rbxassetid://84938810858565"
+})
+local Paragraph = AddParagraph(Main, {"سكربت عبارة عن مجموعة كبيرة من الاغاني", "bom dia meus manos"})
+AddButton(Main, {
+  Name = "انسخ يوزر قناتي يوتيوب",
+  Callback = function()
+    setclipboard('@Troll.X40_40')
+  end
+})
+AddButton(Main, {
+  Name = "انسخ رابط قناتي تلي",
+  Callback = function()
+    setclipboard('https://t.me/TrollX409')
+  end
+})
+local Main = MakeTab({Name = "اغاني فونك | 🎶"})
