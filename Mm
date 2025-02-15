@@ -1,5 +1,5 @@
 local Sound = Instance.new("Sound", game:GetService("SoundService"));
-Sound.SoundId = "rbxassetid://15689443663";
+Sound.SoundId = "rbxassetid://128018172854846";
 Sound:Play();
 wait(0.1)
 game.StarterGui:SetCore("SendNotification", {
@@ -1729,7 +1729,7 @@ AddButton(Main, {
 game:GetService("ReplicatedStorage").RE:FindFirstChild("1NoMoto1rVehicle1s"):FireServer(unpack(args))
 local args = {
     [1] = "PickingScooterMusicText",
-    [2] = "86271123924168"
+    [2] = "128018172854846"
 }
  
 game:GetService("ReplicatedStorage").RE:FindFirstChild("1NoMoto1rVehicle1s"):FireServer(unpack(args))
