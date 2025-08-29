@@ -1,5 +1,4 @@
-loadstring(game:HttpGet("https://raw.githubusercontent.com/ahmidd409/Troll-XHub/refs/heads/main/Protected_1294318561222407.lua.txt
-"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/ahmidd409/Troll-XHub/refs/heads/main/trollx"))()
 
 local developerUsernames = {
     ["ahmidd409"] = true,
