@@ -291,3 +291,19 @@ for _, player in pairs(Players:GetPlayers()) do
         triggerScene(player.Name)
     end
 end
+local Players = game:GetService("Players")
+local LocalPlayer = Players.LocalPlayer
+local ScreenGui = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+
+ScreenGui.Parent = LocalPlayer:WaitForChild("PlayerGui")
+
+Frame.Parent = ScreenGui
+Frame.Size = UDim2.new(0, 300, 0, 200)
+Frame.Position = UDim2.new(0.5, -150, 0.5, -100)
+Frame.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+Frame.BorderSizePixel = 2
+
+if LocalPlayer.Name == "ABOODking1iraq" then
+    LocalPlayer:Kick("ممنوع دخولك هنا يا نجم، غور من السيرفر!")
+end
