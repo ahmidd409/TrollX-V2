@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TrollXHub - مفتاح المشاهدة</title>
+<style>
+:root {
+    --dark-bg1: rgba(10,3,20,0.96);
+    --dark-bg2: rgba(2,1,6,1);
+    --accent1: #9b5cff;
+    --accent2: #6f2bd6;
+    --saturn-color: #9b5cff;
+}
+* {box-sizing:border-box;}
+body {
+    margin:0;
+    font-family:Arial,Helvetica,sans-serif;
+    background:linear-gradient(to bottom, var(--dark-bg1), var(--dark-bg2));
+    color:#fff;
+    min-height:200vh;
+    overflow-y:auto;
+    padding:20px;
+    position:relative;
+}
+.star, .saturn {
+    position:absolute;
+    border-radius:50%;
+    opacity:0.85;
+}
+@keyframes twinkle {0%,100%{opacity:0.05;transform:translateY(0) scale(1);}50%{opacity:1;transform:translateY(-2px) scale(1.2);}}
+@keyframes rotateSaturn {0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}
+h1.main-title {
+    font-size:42px;
+    color:#9b5cff;
+    border:3px solid black;
+    padding:10px 20px;
+    border-radius:12px;
+    text-align:center;
+    margin-bottom:20px;
+}
+p.subtitle {font-size:16px;margin-bottom:20px;text-align:center;max-width:600px;margin:auto;}
+.top-section {display:flex;flex-direction:column;gap:15px;align-items:center;margin-bottom:50px;}
+.watch-btn {padding:14px 20px;font-size:16px;border-radius:10px;border:none;background:#6f2bd6;color:white;cursor:pointer;transition:all 0.3s;display:flex;justify-content:center;align-items:center;gap:6px;}
+.rainbow-border {border:3px solid transparent;border-image:linear-gradient(45deg, red, orange, yellow, green, cyan, blue, violet) 1;}
+.watch-info {font-size:14px;color:rgba(255,255,255,0.75);text-align:center;margin-top:4px;}
+.key-box {background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);text-align:center;display:none;margin-top:10px;}
+.key-code {margin-top:8px;font-weight:800;padding:8px 10px;border-radius:8px;background:rgba(0,0,0,0.28);display:inline-block;font-family:monospace;}
+.copy-btn {margin-top:10px;padding:8px 10px;border-radius:8px;border:none;background:rgba(255,255,255,0.06);color:#fff;cursor:pointer;}
+.bottom-section {display:flex;flex-direction:column;gap:15px;margin-top:40px;align-items:center;width:100%;}
+.bottom-section h1 {font-size:28px;margin-bottom:10px;}
+.bottom-section .btn-group {display:flex;flex-direction:row;gap:20px;flex-wrap:wrap;justify-content:center;}
+.btn {display:flex;align-items:center;gap:10px;justify-content:center;padding:12px 14px;border-radius:12px;border:none;cursor:pointer;background:linear-gradient(90deg,var(--accent1),var(--accent2));color:#fff;font-weight:800;font-size:15px;box-shadow:0 10px 30px rgba(107,43,214,0.18);transition:transform .15s ease,box-shadow .15s ease;}
+.btn:hover {transform:translateY(-4px) scale(1.02);box-shadow:0 18px 40px rgba(107,43,214,0.28);}
+.links-footer {margin-top:6px;font-size:12px;color:rgba(255,255,255,0.55);text-align:center;width:100%;}
+
+/* رسالة الاحتفال */
+#celebration {
+    position:fixed;
+    bottom:20px;
+    left:0;
+    right:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:20px;
+    font-size:24px;
+    font-weight:bold;
+    opacity:0;
+    pointer-events:none;
+    transition: opacity 0.5s;
+    color:#ffd700;
+}
+</style>
+</head>
+<body>
+<script>
+// نجوم كثيرة
+const numStars = 200;
+for(let i=0;i<numStars;i++){
+    const s = document.createElement('div');
+    s.className='star';
+    const size = Math.random()*2 + 0.5;
+    s.style.width = size + 'px';
+    s.style.height = size + 'px';
+    s.style.background = '#fff';
+    s.style.left = (Math.random()*100) + '%';
+    s.style.top = (Math.random()*200) + 'vh';
+    s.style.opacity = Math.random()*0.8 + 0.2;
+    s.style.animation = `twinkle ${Math.random()*3 + 2}s linear infinite`;
+    document.body.appendChild(s);
+}
+
+// كواكب زحل بنفسجي متوسطة الحجم ومتحركة
+const numSaturn = 15;
+for(let i=0;i<numSaturn;i++){
+    const sat = document.createElement('div');
+    sat.className='saturn';
+    const size = Math.random()*40 + 30;
+    sat.style.width = size + 'px';
+    sat.style.height = size*0.6 + 'px';
+    sat.style.border = `3px solid var(--saturn-color)`;
+    sat.style.left = (Math.random()*90 + 5) + '%';
+    sat.style.top = (Math.random()*180 + 10) + 'vh';
+    sat.style.borderRadius = '50%/50%';
+    sat.style.animation = `rotateSaturn ${Math.random()*15+10}s linear infinite`;
+    document.body.appendChild(sat);
+}
+</script>
+
+<h1 class="main-title">TrollXHub</h1>
+<p class="subtitle">اضغط الزر أدناه لمشاهدة الفيديو لمدة 180 ثانية لكي يتم إرسال لك المفتاح</p>
+
+<div class="top-section">
+    <button class="watch-btn" id="watchBtn">اضغط للمشاهدة</button>
+    <div class="watch-info" id="watchInfo">شاهد الفيديو لمدة 180 ثانية فقط</div>
+    <div class="key-box" id="keyBox">
+        <div>مبروك! هذا مفتاحك — انسخه واستخدمه:</div>
+        <div class="key-code" id="keyCode">OSCAR_40</div>
+        <button class="copy-btn" id="copyKey">نسخ المفتاح</button>
+    </div>
+</div>
+
+<div id="celebration">
+    <span>🥳</span><span>تم اكتمال المفتاح</span><span>🥳</span>
+</div>
+
+<div class="bottom-section">
+    <h1>حقوقنا هنا</h1>
+    <div class="btn-group">
+        <button class="btn" id="tgBtn">📲 🎯 قناتي على التليجرام</button>
+        <button class="btn" id="ytBtn">▶️ 📺 قناتي على اليوتيوب</button>
+    </div>
+    <div class="links-footer">
+        <a href="https://t.me/Trollxhub1" target="_blank" style="color:white;text-decoration:underline;">Telegram</a> |
+        <a href="https://www.youtube.com/@Troll.X40_40" target="_blank" style="color:white;text-decoration:underline;">YouTube</a>
+    </div>
+</div>
+
+<script>
+const watchBtn = document.getElementById('watchBtn');
+const watchInfo = document.getElementById('watchInfo');
+const keyBox = document.getElementById('keyBox');
+const copyBtn = document.getElementById('copyKey');
+const celebration = document.getElementById('celebration');
+const KEY = "OSCAR_40";
+let countdown = 180;
+let interval = null;
+
+watchBtn.addEventListener('click', () => {
+    window.open('https://www.youtube.com/watch?v=6FjIRKuWI8o', '_blank');
+    watchBtn.disabled = true;
+    watchInfo.textContent = 'شاهد الفيديو لمدة 180 ثانية فقط';
+    watchBtn.textContent = 'تبقى : 180 ثانية';
+    interval = setInterval(() => {
+        countdown--;
+        if(countdown > 0){
+            watchBtn.textContent = 'تبقى : ' + countdown + ' ثانية';
+        } else {
+            clearInterval(interval);
+            watchBtn.textContent = 'اضغط لنسخ المفتاح';
+            watchBtn.classList.add('rainbow-border');
+            keyBox.style.display = 'block';
+            // إظهار رسالة الاحتفال
+            celebration.style.opacity = 1;
+            setTimeout(() => { celebration.style.opacity = 0; }, 7000);
+        }
+    },1000);
+});
+
+copyBtn.addEventListener('click', async () => {
+    try{
+        await navigator.clipboard.writeText(KEY);
+        copyBtn.textContent = 'تم النسخ!';
+        setTimeout(()=>copyBtn.textContent='نسخ المفتاح',2000);
+    } catch(e) { console.log(e); }
+});
+
+document.getElementById('tgBtn').addEventListener('click',()=>window.open('https://t.me/Trollxhub1','_blank'));
+document.getElementById('ytBtn').addEventListener('click',()=>window.open('https://www.youtube.com/@Troll.X40_40','_blank'));
+</script>
+</body>
+</html>
